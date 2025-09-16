@@ -1,0 +1,60 @@
+/* Estilo base para los enlaces */
+a {
+  display: inline-block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  transition: all 0.3s ease; /* transición suave para hover/animaciones */
+}
+
+/*1. Al recibir foco*/
+a:focus {
+  outline: none;/*quitar borde por defecto */
+  background-color: #ffe599;/*color de fondo diferente */
+  border: 2px solid #ff9900;/*borde visible */
+}
+
+/*2.resaltar el primer y ultimo enlace*/
+li:first-child a {
+  background-color: #c2efb2;/*Unverde claro */
+  color: #000;
+}
+
+li:last-child a {
+  background-color: #cfe2f3;   /* azul claro */
+  color: #000;
+}
+
+/*3.Efecto hover + ::after */
+a:hover {
+  background-color: #b6d7a8;/*tono diferente al pasar */
+  transform: scale(1.05) translateY(-2px); /* animación pequeña */
+}
+
+a:hover::after {
+  content: "🔗"; /*icono extra */
+  font-size: 0.9em;
+}
+
+/*4.Primera letra llamativa */
+a::first-letter {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ff6600;
+}
+
+/*5.Alternar estilos con :nth-child*/
+li:nth-child(odd) a {
+  border-left: 4px solid #6aa84f; /*borde verde en impares */
+}
+
+li:nth-child(even) a {
+  border-left: 4px solid #3c78d8;/*borde azul en pares */
+}
+
+/*(Opcional) Desafío extra: ::first-line */
+a::first-line {
+  font-style: italic;
+}
